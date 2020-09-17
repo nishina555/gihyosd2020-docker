@@ -2,7 +2,7 @@ version: '3'
 services:
   web:
     build: .
-    command: ["./start.sh"]
+    command: ["./wait-for-it.sh", "db:3306", "--", "./start.sh"]
     ports:
       - '3000:3000'
     volumes:
