@@ -12,6 +12,10 @@ services:
   db:
     image: mysql:8.0.21
     command: --default-authentication-plugin=mysql_native_password
+    volumes:
+      - mysql_data:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: 'pass'
       MYSQL_DATABASE: 'gihyosd_app_development'
+volumes:
+  mysql_data:
