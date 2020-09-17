@@ -1,0 +1,17 @@
+version: '3'
+services:
+  web:
+    build: .
+    command: ["rails", "server", "-b", "0.0.0.0"]
+    ports:
+      - '3000:3000'
+    volumes:
+      - .:/gihyosd_app
+    depends_on:
+      - db
+  db:
+    image: mysql:8.0.21
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: 'pass'
+      MYSQL_DATABASE: 'gihyosd_app_development'
