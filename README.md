@@ -1,24 +1,46 @@
-# README
+Software Design 2020年12月号第1特集 第3章で紹介したサンプルアプリケーションです。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<img width="295" alt="スクリーンショット 2020-09-13 21 37 09" src="https://user-images.githubusercontent.com/3121046/93600578-d7730100-f9fa-11ea-8e9d-5ac72faaaa16.png">
 
-Things you may want to cover:
+名前付きボリュームを利用してデータベースのデータの永続化をしています。データの永続化の挙動を手元で確認する際に活用していただければと思います。
 
-* Ruby version
+サンプルアプリケーションの作成手順の詳細は[チームで共有するための『Rails 6 x MySQL 8』Docker環境構築手順](https://nishinatoshiharu.com/docker-rails6-mysql8/)をご覧になってください。
 
-* System dependencies
+## 起動方法
 
-* Configuration
+```
+$ docker-compose up
+```
 
-* Database creation
+コンテナ起動時にデータベースのテーブルを自動で作成するようにしているため、`db:migrate`コマンドの手動実行は不要です。
 
-* Database initialization
+## データの登録方法
+`localhost:3000/events/new`のフォームからデータを登録できます。
 
-* How to run the test suite
+![スクリーンショット 2020-09-18 22 07 49](https://user-images.githubusercontent.com/3121046/93600986-75ff6200-f9fb-11ea-85a5-8f464ccdb282.png)
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+## 終了方法
 
-* ...
+```
+# コンテナを削除する場合
+$ docker-compose down
+
+# コンテナとデータボリュームを削除する場合
+$ docker-compose down --volumes
+```
+
+## データボリュームの確認方法
+
+```
+$ docker volume ls [ボリューム名]
+```
+
+## データボリュームの削除方法
+
+```
+$ docker volume rm [ボリューム名]
+```
+
+## そのほか
+なにかあればIssueやTwitter(<a href="https://twitter.com/nishina555" target="_blank" rel="noopener">@nishina555</a>)でご連絡ください。
