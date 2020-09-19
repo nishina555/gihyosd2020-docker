@@ -1,7 +1,9 @@
-version: '3'
+version: '3.8'
 services:
   web:
     build: .
+    image: gihyosd_app_web
+    container_name: gihyosd_app_web
     command: ["./wait-for-it.sh", "db:3306", "--", "./start.sh"]
     ports:
       - '3000:3000'
@@ -11,6 +13,7 @@ services:
       - db
   db:
     image: mysql:8.0.21
+    container_name: gihyosd_app_db
     command: --default-authentication-plugin=mysql_native_password
     volumes:
       - mysql_data:/var/lib/mysql
@@ -19,3 +22,4 @@ services:
       MYSQL_DATABASE: 'gihyosd_app_development'
 volumes:
   mysql_data:
+    name: gihyosd_mysql_data
