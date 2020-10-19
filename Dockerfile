@@ -10,7 +10,7 @@ RUN apt-get update -qq && \
 WORKDIR /gihyosd_app
 
 # ホストのGemfileをコンテナにコピー
-COPY Gemfile /gihyosd_app/Gemfile
+COPY Gemfile* /gihyosd_app/
 
 # /gihyosd_appディレクトリ上でbundle install
 RUN bundle install
