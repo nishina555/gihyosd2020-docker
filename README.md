@@ -1,6 +1,6 @@
 Software Design 2020年12月号第1特集 第3章で紹介したサンプルアプリケーションです。
 
-<img width="295" alt="スクリーンショット 2020-09-13 21 37 09" src="https://user-images.githubusercontent.com/3121046/93600578-d7730100-f9fa-11ea-8e9d-5ac72faaaa16.png">
+<kbd><img width="370" alt="events_index" src="https://user-images.githubusercontent.com/3121046/96992423-d89cce00-1564-11eb-9258-e09f4851ff27.png"></kbd>
 
 名前付きボリュームを利用してデータベースのデータの永続化をしています。データの永続化の挙動を手元で確認する際に活用していただければと思います。
 
@@ -17,7 +17,7 @@ $ docker-compose up
 ## データの登録方法
 `localhost:3000/events/new`のフォームからデータを登録できます。
 
-![スクリーンショット 2020-09-18 22 07 49](https://user-images.githubusercontent.com/3121046/93600986-75ff6200-f9fb-11ea-85a5-8f464ccdb282.png)
+<kbd><img width="370" alt="events_new" src="https://user-images.githubusercontent.com/3121046/96992738-3fba8280-1565-11eb-9d06-75971d27ac3e.png"></kbd>
 
 
 ## 終了方法
